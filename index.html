@@ -14,10 +14,18 @@
 </div>
 
 <script>
+
     new Vue({
         el:'#container',
+        ready:function(){
+            var self=this;
+            $.get('php/data.php',function (response) {
+                self.message1=response[ob];
+            })
+
+        },
         data:{
-            message1:'第一',
+            message1:'第亿',
             message2:'第二',
             message3:'第三'
         }
